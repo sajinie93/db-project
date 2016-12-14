@@ -4,8 +4,10 @@
     <h4>SaRigaMa MusIc</h4>
     <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Dashboard</a></li>
-        <li><a href={{route('add_module')}}>View Module</a></li>
-        <li><a href="#">Add Module</a></li>
+        <li><a href={{route('add_class_module')}}>Add Class Module</a></li>
+        <li><a href="#">View Class Modules</a></li>
+        <li><a href="{{route('add_hall')}}">Add Hall</a></li>
+        <li><a href="{{route('add_module')}}">Add Module</a></li>
         <li><a href="#">Class Room</a></li>
         <li><a href="#section2">Add Payment</a></li>
         <li><a href="#section2">Payment history</a></li>
@@ -22,6 +24,7 @@
         <li><a href="#section2">Teacher Attendance</a></li>
         <li><a href="#section2">Teacher Attendance History</a></li>
         <li><a href="#">Student Attendance History</a></li>
+        <li><a href="{{route('add_instrument')}}">Add Instrument</a></li>
 
     </ul><br>
     <div class="input-group">

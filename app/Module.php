@@ -3,6 +3,7 @@
 namespace App;
 
 //use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use DB;
 
 class Module
@@ -11,6 +12,15 @@ class Module
     public function getAll(){
         $modules = DB::select('SELECT * FROM module');
         return $modules;
+    }
+
+    public function saveModule(Request $request){
+        $module_code = $request['module_code'];
+        $instrument_id = $request['instrument_id'];
+
+        DB::statement("INSERT INTO module(module_code, instrument_id)
+                      VALUES('$module_code','$instrument_id')");
+
     }
     // add new module to the database
 //    public function addModule(){

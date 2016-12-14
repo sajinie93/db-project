@@ -42,16 +42,50 @@ Route::get('/home', 'HomeController@index');
 
 ///////////////////////////////////////////////////// admin
 
-Route::get('/admin',function(){
-    return view ('Admin.dashboard');
+Route::group(['middleware' => ['web']], function (){
+
+    Route::get('/admin', function () {
+        return view('Admin.dashboard');
+    });
+
+    Route::get('/addClassModule', [
+        'uses' => 'AdminController@addClassModule',
+        'as' => 'add_class_module'
+    ]);
+
+    Route::post('/saveClassModule', [
+        'uses' => 'ClassModuleController@saveClassModule',
+        'as' => 'save_class_module'
+    ]);
+
+    Route::get('/addInstrument', function () {
+        return view('Admin.addInstrument');
+    })->name('add_instrument');
+
+    Route::post('/saveInstrument', [
+        'uses' => 'InstrumentController@saveInstrument',
+        'as' => 'save_instrument'
+    ]);
+
+    Route::get('/addHall', [
+        'uses' => 'HallController@AddHall',
+        'as' => 'add_hall'
+    ]);
+    Route::post('/saveHall', [
+        'uses' => 'HallController@SaveHall',
+        'as' => 'save_hall'
+    ]);
+
+
+    Route::get('/addModule', [
+        'uses' => 'ModuleController@AddModule',
+        'as' => 'add_module'
+    ]);
+
+    Route::post('/saveModule', [
+        'uses' => 'ModuleController@SaveModule',
+        'as' => 'save_module'
+    ]);
+
+
 });
-
-Route::get('/addModule', [
-    'uses' => 'AdminController@addModule',
-    'as' => 'add_module'
-]);
-
-Route::post('/saveModule', [
-    'uses' => 'ModuleController@saveModule',
-    'as' => 'save_module'
-])->middleware('web');

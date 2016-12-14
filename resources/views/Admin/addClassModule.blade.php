@@ -19,5 +19,5 @@
 
 @section('content')
 
-    @include('Course.addCourse')
+    @include('Course.addClassModule')
 @endsection
