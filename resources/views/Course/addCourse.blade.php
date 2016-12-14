@@ -8,7 +8,7 @@
 
 
     <div>
-        <h1>Class</h1>
+        <h1>Module</h1>
     </div>
 
     @if(count($errors)>0)
@@ -32,32 +32,81 @@
         <div class="container" style="float: left;  border-style: inset; padding-bottom: 5%; background-color: white;">
 
 
-            <h2>Add Class</h2>
-            <form action="{{route('save_course')}}" method="POST">
+            <h2>Add Module</h2>
+            {{--{{route('save_course')}}--}}
+            <form action="#" method="POST">
                 {!!csrf_field()!!}
                 <div class="form-group">
-                    <label for="title">Course Name:</label>
-                    <input type="text" class="form-control" name='name' id="name" placeholder="Enter course title">
+                    <label for="class_module_id">Enter Module Id:</label>
+                    <input type="text" class="form-control" name="class_module_id" id="class_module_id" placeholder="Enter module id">
                 </div>
                 <div class="form-group">
-                    <label for="instrument">Module Code:</label>
-                    <input type="text" class="form-control" name='module_code' id="module_code" placeholder="Enter instrument">
+                    <label for="module_code">Module Code:</label>
+                    <select name="module_code" id="module_code" >
+
+                        @foreach($modules as $module)
+                            <option value={{$module->module_code}}>{{$module->module_code}}</option>
+                        @endforeach
+
+                    </select>
+                    {{--<input type="text" class="form-control" name='module_code' id="module_code" placeholder="Enter module title">--}}
                 </div>
                 <div class="form-group">
-                    <label for="fee">Course Fee:</label>
-                    <input type="text" class="form-control" name="fee" id="fee" placeholder="Enter course fee">
+                    <label for="instrument">Instrument:</label>
+                    <select name="instrument" id="instrument" >
+
+                        {{--@foreach($courses as $course)--}}
+                        {{--<option value={{$course->id}}>{{$course->name}}</option>--}}
+                        {{--@endforeach--}}
+
+                    </select>
+                    {{--<input type="text" class="form-control" name='instrument' id="instrument" placeholder="Enter instrument">--}}
                 </div>
                 <div class="form-group">
-                    <label for="location">Type:</label>
-                    <input type="text" class="form-control" name="type" id="type" placeholder="Enter location">
+                    <label for="monthly_class_fee">Module Fee:</label>
+                    <input type="text" class="form-control" name="monthly_class_fee" id="monthly_class_fee" placeholder="Enter module fee">
                 </div>
+                <div class="form-group">
+                    <label for="hall_name">Hall Name:</label>
+                    <select name="hall_name" id="hall_name" >
+
+
+                        {{--@foreach($courses as $course)--}}
+                        {{--<option value={{$course->id}}>{{$course->name}}</option>--}}
+                        {{--@endforeach--}}
+
+                    </select>
+                    {{--<input type="text" class="form-control" name="hall_name" id="hall_name" placeholder="Enter location">--}}
+                </div>
+                <div class="form-group">
+                    <label for="num_student">Enter Number of Student:</label>
+                    <input type="text" class="form-control" name="num_student" id="num_student" placeholder="Enter number of student">
+                </div>
+                <div class="form-group">
+                    <label for="teacher_fee_percentage">Enter Teacher Fee Percentage:</label>
+                    <input type="text" class="form-control" name="teacher_fee_percentage" id="teacher_fee_percentage" placeholder="Enter teacher fee percentage">
+                </div>
+                <div class="form-group">
+                    <label for="class_type">Enter Class Type:</label>
+                    <select name="class_type" id="class_type" >
+
+                        {{--<option value="" disabled selected>Group</option>--}}
+                        <option value="1">Group</option>
+                        <option value="2">Individual</option>
+
+                    </select>
+                    {{--<input type="text" class="form-control" name="class_type" id="class_type" placeholder="Enter class type">--}}
+                </div>
+
+
+
+
 
                 {{--<div class="checkbox">--}}
                 {{--<label><input type="checkbox"> Remember me</label>--}}
                 {{--</div>--}}
                 <button type="submit" class="btn btn-default" style="float:left;  color: #d9edf7; background-color: #2a88bd" value="submit">Save</button>
-                {{--<input type="hidden" name="_token" value="{{Session::token()}}">--}}
-                {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+
             </form>
 
 
@@ -68,10 +117,11 @@
 
     <div class="col-sm-12;" style="padding-bottom: 10%; margin-top: 60% ">
         <div class="container" style="border-style: inset; padding-bottom: 5%; width: 100%; float: left; background-color: white;">
-            <h2>All Classes</h2>
+            <h2>All Modules</h2>
 
             <div class="input-group">
-                <form action="{{route('search_course')}}" method="post"  type="text" class="form-control" placeholder="Search by title | instrument | location .." name="searchValue">
+                {{--{{route('search_course')}}--}}
+                <form action="#" method="post"  type="text" class="form-control" placeholder="Search by title | instrument | location .." name="searchValue">
                     <span class="input-group-btn">
                         <button  type="submit" class="btn btn-default" name="search"  >
                             {{--<a href="{{URL::route('/check')}}"></a>--}}
@@ -94,14 +144,14 @@
                             <th>Fee</th>
                         </tr>
 
-                        @foreach($courses as $course)
-                            <tr>
-                                <th>{{ $course->name }}</th>
-                                <th>{{ $course->module_code }}</th>
-                                <th>{{ $course->type }}</th>
-                                <th>{{ $course->fee }}</th>
-                            </tr>
-                        @endforeach
+                        {{--@foreach($courses as $course)--}}
+                            {{--<tr>--}}
+                                {{--<th>{{ $course->name }}</th>--}}
+                                {{--<th>{{ $course->module_code }}</th>--}}
+                                {{--<th>{{ $course->type }}</th>--}}
+                                {{--<th>{{ $course->fee }}</th>--}}
+                            {{--</tr>--}}
+                        {{--@endforeach--}}
                     </table>
                 </div>
             </div>

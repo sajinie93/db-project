@@ -47,6 +47,11 @@ Route::get('/admin',function(){
 });
 
 Route::get('/addModule', [
-    'uses' => 'ModuleController@addModule',
+    'uses' => 'AdminController@addModule',
     'as' => 'add_module'
 ]);
+
+Route::post('/saveModule', [
+    'uses' => 'ModuleController@saveModule',
+    'as' => 'save_module'
+])->middleware('web');

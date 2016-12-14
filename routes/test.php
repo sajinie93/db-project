@@ -51,10 +51,10 @@ Route::get('/searchCourse', [
     'as' => 'search_course'
 ])->middleware('web');
 
-Route::post('/saveCourse', [
-    'uses' => 'CourseController@saveCourse',
-    'as' => 'save_course'
-])->middleware('web');
+//Route::post('/saveCourse', [
+//    'uses' => 'CourseController@saveCourse',
+//    'as' => 'save_course'
+//])->middleware('web');
 
 
 

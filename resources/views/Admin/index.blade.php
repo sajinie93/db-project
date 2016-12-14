@@ -4,7 +4,7 @@
     <h4>SaRigaMa MusIc</h4>
     <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Dashboard</a></li>
-        <li><a href="#">View Module</a></li>
+        <li><a href={{route('add_module')}}>View Module</a></li>
         <li><a href="#">Add Module</a></li>
         <li><a href="#">Class Room</a></li>
         <li><a href="#section2">Add Payment</a></li>
