@@ -64,32 +64,32 @@
                         <input type="text" class="form-control" name='module_code' id="module_code"
                                placeholder="Enter module code">
                     </div>
-                    <div class="form-group">
-                        <label for="instrument">Instrument ID:</label>
-                        <input type="text" class="form-control" name='instrument_id' id="instrument_id"
-                               placeholder="Enter instrument id">
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="instrument">Instrument ID:</label>--}}
+                        {{--<input type="text" class="form-control" name='instrument_id' id="instrument_id"--}}
+                               {{--placeholder="Enter instrument id">--}}
+                    {{--</div>--}}
 
                     <div class="form-group">
-                        <label for="module_code">Module Code:</label>
-                        <select name="module_code" id="module_code">
+                        <label for="instrument_id">Instrument ID:</label>
+                        <select name="instrument_id" id="instrument_id">
 
-                            @foreach($modules as $module)
-                                <option value={{$module->module_code}}>{{$module->module_code}}</option>
+                            @foreach($instruments as $instrument)
+                                <option value={{$instrument->instrument_id}}>{{$instrument->instrument_id}}</option>
                             @endforeach
 
                         </select>
-                        {{--<input type="text" class="form-control" name='module_code' id="module_code" placeholder="Enter module title">--}}
+
                     </div>
 
                     <button type="submit" class="btn btn-default" style="float:left;  color: #d9edf7; background-color: #2a88bd" value="submit">Save</button>
-                    <input type="hidden" name="_token" value="{{Session::token()}}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                    {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
                 </form>
 
 
-            {{--</div>--}}
-        {{--</div>--}}
+            </div>
+        </div>
 
 
         {{--<div class="col-sm-12;" style="padding-bottom: 10%; margin-top: 60% ">--}}

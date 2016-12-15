@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Instrument;
 use App\Module;
 use Illuminate\Http\Request;
 
@@ -22,15 +23,17 @@ class ModuleController extends Controller
 //                      VALUES('10', '$first_name', '$middle_name', '$last_name', 'MALE')");
 //    }
     public function AddModule(){
+        $instruments = (new Instrument())->getAll();
+        return view ('Admin.addModule',['instruments'=>$instruments]);
+    }
 
-    return view ('Admin.addModule');
-}
     public function SaveModule(Request $request){
-        ( new Module())->SaveModule($request);
+        (new Module())->SaveModule($request);
         return redirect()-> route('add_module');
     }
+
     public function GetAll(){
-        $modules=(new Hall())->getAll();
+        $modules=(new Module())->getAll();
         return $modules;
     }
 
