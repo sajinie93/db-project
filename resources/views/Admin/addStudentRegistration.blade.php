@@ -15,6 +15,9 @@
     <script src="../../../public/js/jquery-ui.min.js" type="text/javascript"></script>
 
     <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
         var d = new Date();
         d.setFullYear( d.getFullYear() - 100 );
         $('.datepicker').pickadate(
@@ -167,7 +170,7 @@
                         <div class="col m5">
                             <p class="right-align">
                                 <button id="add-student-profile" class="btn btn-large waves-effect waves-light midddle"
-                                style="background-color:#00838f" type="submit" name="action" value="submit">Save
+                                        style="background-color:#378d8f" type="submit" name="action" value="submit">Save
                                 </button>
                             </p>
                         </div>

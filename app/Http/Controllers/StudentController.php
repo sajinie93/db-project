@@ -12,7 +12,7 @@ class StudentController extends Controller
 {
     public function AddStudent()
     {
-        return view('Admin.addStudent');
+        return view('Admin.addStudentRegistration');
     }
 
     public function SaveStudent(Request $request)
