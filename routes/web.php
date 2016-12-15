@@ -104,7 +104,13 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'save_module'
     ]);
 
-
-
+    Route::get('/addStudent', [
+        'uses' => 'StudentController@AddStudent',
+        'as' => 'add_student'
+    ]);
+    Route::post('/saveStudent', [
+        'uses' => 'StudentController@SaveStudent',
+        'as' => 'save_student'
+    ]);
 
 });
