@@ -17,7 +17,8 @@
         <li><a href="#section3">All Student</a></li>
         <li><a href="#section3">Leave Student</a></li>
         <li><a href="#section3">Teacher</a></li>
-        <li><a href="#section3">Add Teacher</a></li>
+        <li><a href="{{route('add_teacher')}}">Add Teacher</a></li>
+
         <li><a href="#section3">Leave Teacher</a></li>
         <li><a href="#section3">Assignment Summary</a></li>
         {{--<li><a href={{route('mark_student_attendance')}}>Student Attendance</a></li>--}}

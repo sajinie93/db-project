@@ -113,4 +113,13 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'save_student'
     ]);
 
+    Route::get('/addTeacher',[
+        'uses' => 'AddTeacherController@AddTeacher',
+        'as' => 'add_teacher'
+    ]);
+    Route::post('/saveTeacher', [
+        'uses' => 'AddTeacherController@SaveTeacher',
+        'as' => 'save_teacher'
+    ]);
+
 });
