@@ -59,9 +59,21 @@ Route::group(['middleware' => ['web']], function (){
     ]);
 
     Route::post('/searchClassModule', [                                                /////////////// current
-        'uses' => 'ClassModuleController@showResults',
+        'uses' => 'ClassModuleController@showSearchResults',
         'as' => 'search_class_module'
     ]);
+
+
+    Route::post('/viewClassModule/searchClassModule', [                                                /////////////// current
+        'uses' => 'ClassModuleController@showSearchResultsToViewPage',
+        'as' => 'search_class_module_in_view'
+    ]);
+
+    Route::get('/viewClassModule', [                                                /////////////// current
+        'uses' => 'ClassModuleController@getAll',
+        'as' => 'view_class_module'
+    ]);
+
 
     Route::get('/addInstrument', function () {
         return view('Admin.addInstrument');

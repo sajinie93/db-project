@@ -5,9 +5,9 @@
     <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Dashboard</a></li>
         <li><a href={{route('add_class_module')}}>Add Class Module</a></li>
-        <li><a href="#">View Class Modules</a></li>
+        <li><a href="{{route('view_class_module')}}">View Class Modules</a></li>
         <li><a href="{{route('add_hall')}}">Add Hall</a></li>
-        <li><a href="{{route('add_module')}}">Add Module</a></li>
+        <li><a href="#">Add Module</a></li>
         <li><a href="#">Class Room</a></li>
         <li><a href="#section2">Add Payment</a></li>
         <li><a href="#section2">Payment history</a></li>

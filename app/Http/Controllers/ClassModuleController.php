@@ -34,7 +34,7 @@ class ClassModuleController extends Controller
 
     public function GetAll(){
         $classModules=(new Class_module())->getAll();
-        return view('Admin.addClassModule',[
+        return view('Admin.viewClassModule',[
             'classModule'=>$classModules
         ]);
     }
@@ -60,7 +60,13 @@ class ClassModuleController extends Controller
         return $classModule;
     }
 
-    public function showResults(Request $request){
+    public function showSearchResultsToViewPage(Request $request){
+        $classModules=$this->searchModule($request);
+        return view ('Admin.viewClassModule',['classModule' => $classModules]);
+
+    }
+
+    public function showSearchResults(Request $request){
         $modules = (new Module())->getAll();
         $instruments=(new Instrument())->getAll();
         $halls=(new Hall())->getAll();
