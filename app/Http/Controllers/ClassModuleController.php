@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Class_module;
+use App\Hall;
+use App\Instrument;
 use App\Module;
 use Illuminate\Http\Request;
 
@@ -30,6 +32,13 @@ class ClassModuleController extends Controller
 
     }
 
+    public function GetAll(){
+        $classModules=(new Class_module())->getAll();
+        return view('Admin.addClassModule',[
+            'classModule'=>$classModules
+        ]);
+    }
+
 //    public function viewAddCoursePage(){
 //        $all_courses = Course::all();   // fetch data from database
 //        return view('Admin.addCourse',[
@@ -38,12 +47,28 @@ class ClassModuleController extends Controller
 //
 //    }
 //
-//    public function searchCourse($id){
-//        $courses = Course::find($id);
-//        return view('Admin.course', [
-//            'courses' => $courses,
-//
+    public function searchModule(Request $request)
+    {
+        $id = (int)$request['searchValue'];
+//        echo $id;
+        $classModule = (new Class_module())->searchClassModule($id);
+
+//        return view('Admin.addClassModule',[
+//            'classModule'=>$classModule
 //        ]);
+
+        return $classModule;
+    }
+
+    public function showResults(Request $request){
+        $modules = (new Module())->getAll();
+        $instruments=(new Instrument())->getAll();
+        $halls=(new Hall())->getAll();
+        $classModules=$this->searchModule($request);
+
+        return view ('Admin.addClassModule',['modules'=>$modules,'instruments'=>$instruments,'halls'=>$halls,'classModules' => $classModules]);
+
+    }
 //
 //    }
 

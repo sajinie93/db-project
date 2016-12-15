@@ -58,6 +58,11 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'save_class_module'
     ]);
 
+    Route::post('/searchClassModule', [                                                /////////////// current
+        'uses' => 'ClassModuleController@showResults',
+        'as' => 'search_class_module'
+    ]);
+
     Route::get('/addInstrument', function () {
         return view('Admin.addInstrument');
     })->name('add_instrument');
@@ -86,6 +91,8 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'ModuleController@SaveModule',
         'as' => 'save_module'
     ]);
+
+
 
 
 });

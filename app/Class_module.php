@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use DB;
 class Class_module
@@ -19,5 +18,19 @@ class Class_module
         DB::statement("INSERT INTO class_module(class_module_id, module_code, hall_name, class_type,monthly_class_fee,num_students,teacher_fee_percentage)
                       VALUES('$class_module_id','$module_code', '$hall_name', '$class_type','$monthly_class_fee','$num_students','$teacher_fee_percentage')");
 
+    }
+
+
+    public function searchClassModule($id){
+
+        //query for search and return all class module related data to be fetched to the table
+        $classModule = DB::select('SELECT * FROM class_module NATURAL JOIN hall NATURAL JOIN module NATURAL JOIN instrument WHERE class_module_id ='.$id);
+
+        return $classModule;
+    }
+
+    public function getAll(){
+        $classModules = DB::select('SELECT * FROM class_module NATURAL JOIN hall NATURAL JOIN module NATURAL JOIN instrument');
+        return $classModules;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Class_module;
 use App\Hall;
 use App\Instrument;
 use App\Module;
@@ -16,8 +17,11 @@ class AdminController extends Controller
         $modules = (new Module())->getAll();
         $instruments=(new Instrument())->getAll();
         $halls=(new Hall())->getAll();
+        $classModules=(new Class_module())->getAll();
 
-        return view ('Admin.addClassModule',['modules'=>$modules,'instruments'=>$instruments,'halls'=>$halls]);
+        return view ('Admin.addClassModule',['modules'=>$modules,'instruments'=>$instruments,'halls'=>$halls,'classModules' => $classModules]);
     }
+
+
 
 }
