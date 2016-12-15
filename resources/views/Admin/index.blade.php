@@ -13,7 +13,7 @@
         <li><a href="#section2">Payment history</a></li>
         <li><a href="#section2">Teacher salary</a></li>
         <li><a href="#section2">Teacher Salary's History</a></li>
-        <li><a href="#section3">Add Student</a></li>
+        <li><a href="{{route('add_student')}}">Add Student</a></li>
         <li><a href="#section3">All Student</a></li>
         <li><a href="#section3">Leave Student</a></li>
         <li><a href="#section3">Teacher</a></li>
