@@ -16,7 +16,7 @@ class Class_module
         $teacher_fee_percentage = $request['teacher_fee_percentage'];
 
         DB::statement("INSERT INTO class_module(class_module_id, module_code, hall_name, class_type,monthly_class_fee,num_students,teacher_fee_percentage)
-                      VALUES('$class_module_id','$module_code', '$hall_name', '$class_type','$monthly_class_fee','$num_students','$teacher_fee_percentage')");
+                      VALUES(?,?,?,?,?,?,?)",[$class_module_id,$module_code, $hall_name, $class_type,$monthly_class_fee,$num_students,$teacher_fee_percentage]);
 
     }
 

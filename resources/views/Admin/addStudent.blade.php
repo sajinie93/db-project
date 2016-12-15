@@ -39,6 +39,12 @@
             document.getElementById("date").innerHTML=today;
         }
 
+        $( document ).ready(function(attendance) {
+
+            document.getElementById("attendance").value = attendance;
+
+        });
+
     </script>
 @endsection
 

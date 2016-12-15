@@ -8,7 +8,7 @@ use App\Instrument;
 use App\Module;
 use Illuminate\Http\Request;
 
-class ClassModuleController extends Controller
+class ClassModuleController
 {
 //    public function getAllCourses(){
 //        $all_courses = Course::all();   // fetch data from database

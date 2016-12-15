@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Auth;
 class TeacherMiddleware
 {
     /**
@@ -15,10 +15,7 @@ class TeacherMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //rank
-        //admin = 1 teacher = 2
-
-        if(Auth::user()->rank == 1 || Auth::user()->rank == 2){
+        if(Auth::user()->account_type == "A" || Auth::user()->account_type == "B"){
             return $next($request);
         }else{
             return redirect()->route('/home');

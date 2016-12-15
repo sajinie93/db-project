@@ -31,7 +31,7 @@
 
 
         <div>
-            <h1>Add Modules</h1>
+            <h1>Module</h1>
         </div>
 
         @if(count($errors)>0)
@@ -56,7 +56,7 @@
                  style="float: left;  border-style: inset; padding-bottom: 5%; background-color: white;">
 
 
-                <h2>Add Modules</h2>
+                <h2>Add Module</h2>
                 <form action="{{route('save_module')}}" method="POST">
                     {!!csrf_field()!!}
                     <div class="form-group">

@@ -9,7 +9,7 @@
 
 
     <div>
-        <h1>Module</h1>
+        <h1>Class Module</h1>
     </div>
 
     {{--@if(count($errors)>0)--}}
@@ -33,7 +33,7 @@
         <div class="container" style="float: left;  border-style: inset; padding-bottom: 5%; background-color: white;">
 
 
-            <h2>Add Module</h2>
+            <h2>Add Class Module</h2>
             <form action="{{route('save_class_module')}}" method="POST">
             {{--<form action="#" method="POST">--}}
                 {!!csrf_field()!!}
@@ -124,7 +124,7 @@
     <div class="col-sm-12;" style="padding-bottom: 10%; margin-top: 60% ">
         <div class="container"
              style="border-style: inset; padding-bottom: 5%; width: 100%; float: left; background-color: white;">
-            <h2>All Modules</h2>
+            <h2>All Class Modules</h2>
 
             <div class="input-group">
                 <form action="{{route('search_class_module')}}" method="POST" style="float: right; ">
