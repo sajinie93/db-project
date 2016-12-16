@@ -125,9 +125,20 @@ Route::group(['middleware' => ['web']], function (){
     })->name('loginView');
 
 
+    Route::get('/teacher', function () {
+        return view('Teacher.dashboard');
+    })->name('teacher')->middleware(App\Http\Middleware\TeacherMiddleware::class);
 
 
+    Route::get('/AddTeacherSalary', [
+        'uses' => 'TeacherController@getTeachers',
+        'as' => 'teacher_salary'
+    ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
 
+    Route::get('/GetTeacherDetails', [
+        'uses' => 'TeacherController@getTeacher',
+        'as' => 'teacher_detail'
+    ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
 
 
 });

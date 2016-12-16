@@ -3,8 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Teacher_payment extends Model
+use DB;
+class Teacher_payment
 {
-    //
+    public function getAll()
+    {
+        $teacher_payments = DB::select("select* from teacher_payment");
+        return $teacher_payments;
+    }
+
+
+    public  function getTeacher(Request $request){
+        $payments=DB::select('select * from teacher_payment where teacher_id='.$request['teacher_id']);
+        return $payments;
+    }
 }
+
