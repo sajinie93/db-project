@@ -10,7 +10,7 @@
         <li><a href="#">Add Module</a></li>
         {{--<li><a href="#">Class Room</a></li>--}}
         <li><a href="{{route('add_payment')}}">Add Payment</a></li>
-        <li><a href="#section2">Payment history</a></li>
+        <li><a href="{{route('payment_history')}}">Payment history</a></li>
         <li><a href="{{route('teacher_salary')}}">Teacher salary</a></li>
         {{--<li><a href="#section2">Teacher Salary's History</a></li>--}}
         <li><a href="#section3">Add Student</a></li>

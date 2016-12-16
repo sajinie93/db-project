@@ -16,4 +16,9 @@ class FeePaymentController extends Controller
         return redirect()->route('add_payment');
 
     }
+
+    public function viewPayments(){
+        $modules=(new Fee_payment())->getAllPayments();
+        return view('admin.paymentHistory',['modules'=>$modules]);
+    }
 }

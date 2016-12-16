@@ -155,6 +155,11 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'save_payment'
     ])->middleware(App\Http\Middleware\AdminMiddleware::class);
 
+    Route::get('/PaymentHistory', [
+        'uses' => 'FeePaymentController@viewPayments',
+        'as' => 'payment_history'
+    ])->middleware(App\Http\Middleware\AdminMiddleware::class);
+
 
 
 });
