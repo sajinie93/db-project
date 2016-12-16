@@ -11,7 +11,7 @@
         <li><a href="#">Class Room</a></li>
         <li><a href="#section2">Add Payment</a></li>
         <li><a href="#section2">Payment history</a></li>
-        <li><a href="#section2">Teacher salary</a></li>
+        <li><a href="{{route('teacher_salary')}}">Teacher salary</a></li>
         <li><a href="#section2">Teacher Salary's History</a></li>
         <li><a href="#section3">Add Student</a></li>
         <li><a href="#section3">All Student</a></li>

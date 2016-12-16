@@ -18,7 +18,7 @@ class TeacherController extends Controller
     public function getTeachers(){
 //        $name=teacher::all(['name','id']);
         $teachers=(new Teacher())->getAll();
-        return view('teacherSalary',[
+        return view('admin.teacherSalary',[
             'teachers' => $teachers
         ]);
     }
@@ -27,7 +27,7 @@ class TeacherController extends Controller
 //        $name=teacher::all(['name','id']);
         $teacher=(new Teacher())->getTeacher($request);
         $salaries=(new Teacher_payment())->getTeacher($request);
-        return view('teacherDetail',[
+        return view('admin.teacherDetail',[
             'teacher' => $teacher, 'salaries'=>$salaries
         ]);
     }

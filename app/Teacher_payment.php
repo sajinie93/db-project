@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Http\Request;
+
 class Teacher_payment
 {
     public function getAll()
@@ -14,7 +16,7 @@ class Teacher_payment
 
 
     public  function getTeacher(Request $request){
-        $payments=DB::select('select * from teacher_payment where teacher_id='.$request['teacher_id']);
+        $payments=DB::select('select * from teacher_payment where teacher_id="'.$request['teacher_id'].'"');
         return $payments;
     }
 }

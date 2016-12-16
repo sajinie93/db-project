@@ -135,7 +135,7 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'teacher_salary'
     ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
 
-    Route::get('/GetTeacherDetails', [
+    Route::post('/GetTeacherDetails', [
         'uses' => 'TeacherController@getTeacher',
         'as' => 'teacher_detail'
     ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
