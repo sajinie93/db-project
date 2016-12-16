@@ -140,5 +140,11 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'teacher_detail'
     ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
 
+    Route::post('/SaveSalary', [
+        'uses' => 'TeacherController@addSalary',
+        'as' => 'save_salary'
+    ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
+
+
 
 });

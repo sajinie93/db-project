@@ -76,13 +76,12 @@
 
     <div class="row" style="padding-top: 2%;">
         <div class="col-md-12">
-            <form action="#" method="post">
+            <form action="{{route('save_salary')}}" method="post">
 
                 <div class="form-group">
                     <label for="payment">Payment</label>
                     <input class="form-control" type="text" name="payment" id="payment">
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">Confirm</button>
                 <input type="hidden" name="_token" value="{{Session::token()}}">

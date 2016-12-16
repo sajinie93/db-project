@@ -31,4 +31,10 @@ class TeacherController extends Controller
             'teacher' => $teacher, 'salaries'=>$salaries
         ]);
     }
+
+    public function addSalary(Request $request,Teacher $teacher){
+
+        (new Teacher_payment())->addPayment($request,$teacher);
+        return view('admin.teacherDetail');
+    }
 }

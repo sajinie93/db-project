@@ -20,7 +20,7 @@ class Teacher extends Model
     }
 
     public  function getTeacher(Request $request){
-        $teacher=DB::select('select * from teacher where teacher_id'.$request['teacher_id']);
+        $teacher=DB::select('select * from teacher where teacher_id="'.$request['teacher_id'].'"');
         return $teacher;
     }
 }
