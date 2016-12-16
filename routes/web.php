@@ -133,17 +133,27 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/AddTeacherSalary', [
         'uses' => 'TeacherController@getTeachers',
         'as' => 'teacher_salary'
-    ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
+    ])->middleware(App\Http\Middleware\AdminMiddleware::class);
 
     Route::post('/GetTeacherDetails', [
         'uses' => 'TeacherController@getTeacher',
         'as' => 'teacher_detail'
-    ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
+    ])->middleware(App\Http\Middleware\AdminMiddleware::class);
 
     Route::post('/SaveSalary', [
         'uses' => 'TeacherController@addSalary',
         'as' => 'save_salary'
-    ])->middleware(App\Http\Middleware\TeacherMiddleware::class);
+    ])->middleware(App\Http\Middleware\AdminMiddleware::class);
+
+    Route::get('/AddPayment', [
+        'uses' => 'FeePaymentController@addPayment',
+        'as' => 'add_payment'
+    ])->middleware(App\Http\Middleware\AdminMiddleware::class);
+
+    Route::post('/SavePayment', [
+        'uses' => 'FeePaymentController@savePayment',
+        'as' => 'save_payment'
+    ])->middleware(App\Http\Middleware\AdminMiddleware::class);
 
 
 

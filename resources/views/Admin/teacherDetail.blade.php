@@ -79,6 +79,11 @@
             <form action="{{route('save_salary')}}" method="post">
 
                 <div class="form-group">
+                    <input class="hidden" type="text" name="teacher_id" id="teacher_id" value="{{$teacher[0]->teacher_id}}">
+
+
+                </div>
+                <div class="form-group">
                     <label for="payment">Payment</label>
                     <input class="form-control" type="text" name="payment" id="payment">
                 </div>

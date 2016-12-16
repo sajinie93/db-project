@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Fee_payment;
 use App\Student;
 use Illuminate\Http\Request;
 use DB;
@@ -21,6 +22,9 @@ class StudentController extends Controller
         $student_name_id = (new Student())->getAllStudentsNameAndId();
         return $student_name_id;
     }
+
+
+
 
     public function markStudentAttendance(){
         $student_name_id = $this->getAllStudentsNameAndId();
